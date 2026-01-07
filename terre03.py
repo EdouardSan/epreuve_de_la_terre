@@ -1,15 +1,18 @@
-lettre = input("Veuillez entrer une lettre : ")
-resultat = ""
+import sys
 
-# On s'assure que l'utilisateur rentre une seule lettre minuscule
-if len(lettre) != 1:
-    print("Veuillez entrer une unique lettre de l'alphabet !")
+#On vérifie qu'il n'y a qu'un argument et qu'il s'agit d'une lettre de l'alphabet
+if len(sys.argv)!=2:
+    sys.exit("Veuillez entrer en argument une unique lettre de l'alphabet !")
 
-elif ord(lettre) not in range(97, 123):
-    print("Veuillez entrer une lettre de l'alphabet minuscule")
+elif ord(sys.argv[1])<97 or ord(sys.argv[1])>122:
+    sys.exit("Veuillez entrer en argument une lettre de l'alphabet en minuscule !")
 
-# Une fois bon on affiche la fraction de l'alphabet en question
 else:
-    for i in range(ord(lettre), 123):
-        resultat+=chr(i)
-    print(resultat)
+    #La boucle pour créer l'alphabet partiel
+    alphabet_size=range(ord(sys.argv[1]), ord("z")+1)
+    alphabet=""
+
+    for i in alphabet_size:
+        alphabet+=f"{chr(i)}"
+    
+    print(alphabet)

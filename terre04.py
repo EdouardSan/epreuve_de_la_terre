@@ -1,13 +1,15 @@
-nombre = input("Veuillez entrer un nombre :")
+import sys
 
-# On vérifie qu'on a bien un nombre en argument
-if nombre.isdigit() == False:
-    print("Tu ne me la mettras pas à l'envers")
+#on teste qu'on ait bien un unique nombre entier en argument
+if len(sys.argv)!=2 or sys.argv[1].isdigit()==False:
+    sys.exit("Veuillez entrer en argument un unique nombre entier !")
 
-elif nombre.isspace():
-    print("Tu ne me la mettras pas à l'envers")
 
-elif int(nombre) % 2 == 0:
-    print("pair")
 else:
-    print("impair")
+    number=int(sys.argv[1])
+    if number%2 != 0:
+        print(f"Le nombre {number} est impair.")
+    else:
+        print(f"Le nombre {number} est pair.")
+
+    

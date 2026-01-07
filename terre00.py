@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Sur conseil de Romain on utilise le code ASCII décimal gràce à la fonction chr
 resultat = ""
 

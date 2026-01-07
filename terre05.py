@@ -1,12 +1,16 @@
-nombre_a = input("Veuillez entrer un premier nombre : ")
-nombre_b = input("Veuillez entrer un deuxième nombre : ")
+import sys
 
-# On vérifie qu'on a bien des nombres
-if nombre_a.isdigit() == False or nombre_b.isdigit() == False:
-    print("Veuillez rentrer des nombres valides")
+#on vérifie que deux nombres entiers ont été entrés en argument
+if len(sys.argv)!=3 or sys.argv[1].isdigit()==False or sys.argv[2].isdigit()==False:
+    sys.exit("Veuillez entrer en argument deux nombres entiers !")
 
 else:
-    resultat = int(nombre_a)//int(nombre_b)
-    reste = int(nombre_a)%int(nombre_b)
-    print(f"""Le résultat est : {resultat}.
-Le reste est : {reste}.""")
+    a=int(sys.argv[1])
+    b=int(sys.argv[2])
+    if b==0 or a<b:
+        sys.exit("erreur.")
+    else:
+        print(f"""resultat : {a//b}\nreste : {a%b}""")
+        
+
+    

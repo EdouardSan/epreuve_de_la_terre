@@ -1,21 +1,25 @@
-# On prend chaque caractère et on les mets dans une liste
-# A partir de cette liste facilement manipulable on remplit une chaine de caractère en inversant l'ordre
+import sys
 
-chaine = input("Entrez une chaîne de caractère : ")
-liste_chaine = list(chaine)
-chaine_inversee = ""
+#on nomme les choses et on utilisera une liste pour les manipulations
+chain=sys.argv[1]
+chain_list = list(chain)
+inverted_chain = ""
 
-if len(chaine)<= 1:
-    print("Veuillez entrer une chaîne de caractère viable")
+#On gère les erreurs d'arguments
+if len(sys.argv)>2:
+    sys.exit("Veuillez n'entrer qu'une seule chaine de caractère !")
 
-elif chaine.isspace():
-    print("Veuillez entrer une chaîne de caractère !")
+elif len(chain)<= 1:
+    sys.exit("Veuillez entrer une chaîne de caractère viable")
 
+elif chain.isspace():
+    sys.exit("Veuillez entrer une chaîne de caractère !")
+
+#La boucle qui inverse la chaîne de caractère 
 else:
-    for i in range(len(liste_chaine)):
-        chaine_inversee += liste_chaine[-i-1]
-    print(chaine_inversee)
+    for i in range(len(chain_list)):
+        inverted_chain+=chain_list[-i-1]
+    print(inverted_chain)
 
 
-# Question pour Romain :
-# J'ai trouvé isspace() sur le manuel python, est-ce que cette méthode est de la triche ?
+

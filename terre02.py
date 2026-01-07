@@ -1,8 +1,9 @@
-# On passe ici d'un string à une liste qui est plus facilement manipulable
-arguments = input("Entrez ce que vous voulez : ")
+import sys
 
-liste_arguments = arguments.split(" ")
+for arguments in sys.argv:
+    if arguments == sys.argv[0]:
+        continue
+    else:
+        print(arguments)
 
-for i in range(len(liste_arguments)):
-    print(liste_arguments[i])
-    
+
