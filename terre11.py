@@ -18,7 +18,9 @@ else:
 if hour>=13:
     hour-=12
     print(f"{str(hour).zfill(2)}:{str(minutes).zfill(2)}PM")
+
 elif hour==12:
     print(f"{str(hour).zfill(2)}:{str(minutes).zfill(2)}PM")
+    
 else:
-    print(f"{str(hour).zfill(2)}:{str(minutes).zfill(2)}AM")
+    print(f"{str(hour).zfill(2)}:{str(minutes).zfill(2)}AM")        
