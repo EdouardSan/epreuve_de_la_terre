@@ -1,1 +1,1 @@
-print("J'ai terminé l'épreuve de la Terre et c'était plus challengant que prévu !")
+print("J'ai terminé l'épreuve de la Terre et c'était plus challengeant que prévu !")
